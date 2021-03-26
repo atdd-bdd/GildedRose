@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GildedRose
+namespace GildedRoseKata
+
 {
-   
+
         public class GildedRose
         {
             IList<Item> Items;
@@ -17,14 +18,7 @@ namespace GildedRose
             {
                 for (var i = 0; i < Items.Count; i++)
                 {
-                switch (Items[i].Name)
-                {
-                    case "Conjured":
-                        {
-                            UpdateConjured(Items[i]);
-                            continue;
-                        }
-                }
+   
                     if (Items[i].Name != "Aged Brie" && Items[i].Name != "Backstage passes to a TAFKAL80ETC concert")
                     {
                         if (Items[i].Quality > 0)

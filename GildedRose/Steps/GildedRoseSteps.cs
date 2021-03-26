@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using TechTalk.SpecFlow;
-
+using GildedRoseKata; 
 namespace GildedRose.Features
 {
     [Binding]
@@ -29,7 +29,7 @@ namespace GildedRose.Features
         public void WhenADayPasses()
         {
             Items.Add(new Item { Name = name, SellIn = currentSellin, Quality = currentQuality });
-            GildedRose app = new GildedRose(Items);
+            GildedRoseKata.GildedRose app = new GildedRoseKata.GildedRose(Items);
             app.UpdateQuality();
         }
    

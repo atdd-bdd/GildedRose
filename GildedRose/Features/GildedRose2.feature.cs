@@ -19,7 +19,7 @@ namespace GildedRose.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("Gilded Rose", Description=@"	- All items have a SellIn value which denotes the number of days we have to sell the item
+    [TechTalk.SpecRun.FeatureAttribute("Gilded Rose Kata", Description=@"	- All items have a SellIn value which denotes the number of days we have to sell the item
 	- All items have a Quality value which denotes how valuable the item is
 	- At the end of each day our system lowers both values for every item
 
@@ -38,22 +38,22 @@ legendary item and as such its Quality is 80 and it never alters.
 
 We have recently signed a supplier of conjured items. This requires an update to our system:
 
-	- ""Conjured"" items degrade in Quality twice as fast as normal items", SourceFile="Features\\Calculator.feature", SourceLine=0)]
-    public partial class GildedRoseFeature
+	- ""Conjured"" items degrade in Quality twice as fast as normal items", SourceFile="Features\\GildedRose2.feature", SourceLine=0)]
+    public partial class GildedRoseKataFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "Calculator.feature"
+#line 1 "GildedRose2.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Gilded Rose", @"	- All items have a SellIn value which denotes the number of days we have to sell the item
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Gilded Rose Kata", @"	- All items have a SellIn value which denotes the number of days we have to sell the item
 	- All items have a Quality value which denotes how valuable the item is
 	- At the end of each day our system lowers both values for every item
 
@@ -269,30 +269,6 @@ this.QualityChangesEachDay("Backstage passes to a TAFKAL80ETC concert", "1", "0"
         {
 #line 23
 this.QualityChangesEachDay("Backstage passes to a TAFKAL80ETC concert", "50", "11", "50", "10", "50 limit", ((string[])(null)));
-#line hidden
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Quality changes each day, Variant 15", SourceLine=28)]
-        public virtual void QualityChangesEachDay_Variant15()
-        {
-#line 23
-this.QualityChangesEachDay("Conjured", "2", "1", "0", "0", "quality decrease", ((string[])(null)));
-#line hidden
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Quality changes each day, Variant 16", SourceLine=28)]
-        public virtual void QualityChangesEachDay_Variant16()
-        {
-#line 23
-this.QualityChangesEachDay("Conjured", "0", "1", "0", "0", "never below 0", ((string[])(null)));
-#line hidden
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Quality changes each day, Variant 17", SourceLine=28)]
-        public virtual void QualityChangesEachDay_Variant17()
-        {
-#line 23
-this.QualityChangesEachDay("Conjured", "4", "0", "0", "-1", "twice as fast", ((string[])(null)));
 #line hidden
         }
     }
