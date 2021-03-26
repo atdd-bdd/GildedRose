@@ -23,53 +23,57 @@ namespace GildedRoseKata
                 UpdateQualityForItem(item);
             }
         }
-
+        enum Type { NORMAL, BRIE, PASS, LEGACY};
+        static Type getType(Item item)
+        {
+            switch (item.Name)
+            {
+                case "Sulfuras, Hand of Ragnaros":
+                    return Type.LEGACY;
+                case "Aged Brie":
+                    return Type.BRIE;
+                case "Backstage passes to a TAFKAL80ETC concert":
+                    return Type.PASS;
+                default:
+                    return Type.NORMAL; 
+            }
+        }
         private static void UpdateQualityForItem(Item item)
         {
-            if (item.Name == "Sulfuras, Hand of Ragnaros")
+            Type type = getType(item); 
+           if (type == Type.LEGACY)
                 return;
-            if (item.Name != "Aged Brie" && item.Name != "Backstage passes to a TAFKAL80ETC concert")
-            {
-                     item.Quality = item.Quality - 1;
-            }
+            if (type != Type.BRIE &&
+                type != Type.PASS)
+                      item.Quality = item.Quality - 1;
             else
             {
                 item.Quality = item.Quality + 1;
 
-                if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
+                if (type == Type.PASS)
                 {
                     if (item.SellIn < 11)
-                    {
                         item.Quality = item.Quality + 1;
-                    }
-
+  
                     if (item.SellIn < 6)
-                    {
                         item.Quality = item.Quality + 1;
-                    }
-                }
+                 }
 
             }
 
-                item.SellIn = item.SellIn - 1;
+           item.SellIn = item.SellIn - 1;
            if (item.SellIn < 0)
             {
-                if (item.Name != "Aged Brie")
+                if (type != Type.BRIE)
                 {
-                    if (item.Name != "Backstage passes to a TAFKAL80ETC concert")
-                    {
+                    if (type != Type.PASS)
                              item.Quality = item.Quality - 1;
-                    }
                     else
-                    {
-                        item.Quality = 0;
-                    }
-                }
+                         item.Quality = 0;
+                 }
                 else
-                {
                     item.Quality = item.Quality + 1;
-                }
-            }
+             }
             if (item.Quality < 0)
                 item.Quality = 0;
             if (item.Quality > 50)
