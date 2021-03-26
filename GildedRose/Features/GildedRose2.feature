@@ -1,4 +1,4 @@
-﻿Feature: Gilded Rose 
+﻿Feature: Gilded Rose Kata
 	- All items have a SellIn value which denotes the number of days we have to sell the item
 	- All items have a Quality value which denotes how valuable the item is
 	- At the end of each day our system lowers both values for every item
@@ -41,6 +41,3 @@ Examples:
 | Backstage passes to a TAFKAL80ETC concert | 1               | 5              | 4               | 4              | increase by 3    |
 | Backstage passes to a TAFKAL80ETC concert | 1               | 0              | 0               | -1             | after concert    |
 | Backstage passes to a TAFKAL80ETC concert | 50              | 11             | 50              | 10             | 50 limit         |
-|Conjured                        | 2               | 1              | 0               | 0              | quality decrease |
-| Conjured                          | 0               | 1              | 0               | 0              | never below 0    |
-| Conjured                          | 4               | 0              | 0               | -1             | twice as fast    |
