@@ -41,3 +41,62 @@ Examples:
 | Backstage passes to a TAFKAL80ETC concert | 1               | 5              | 4               | 4              | increase by 3    |
 | Backstage passes to a TAFKAL80ETC concert | 1               | 0              | 0               | -1             | after concert    |
 | Backstage passes to a TAFKAL80ETC concert | 50              | 11             | 50              | 10             | 50 limit         |
+
+Scenario: Quality changes each day alternative 
+# current quality cq and current sellIn cs
+# revised quality rq and revised sellIn rs
+* Quality changes after a day passes for specific items
+| name                                      | cq | cs | rq | rs | notes            |
+| Non-specific-item                         | 1               | 1              | 0               | 0              | quality decrease |
+| Non-specific-item                         | 0               | 1              | 0               | 0              | never below 0    |
+| Non-specific-item                         | 4               | 0              | 2               | -1             | twice as fast    |
+| Aged Brie                                 | 4               | 1              | 5               | 0              | increases        |
+| Aged Brie                                 | 4               | 0              | 6               | -1             | increases twice  |
+| Aged Brie                                 | 4               | -1             | 6               | -2             | increases twice  |
+| Aged Brie                                 | 49              | -1             | 50              | -2             | 50 limit         |
+| Aged Brie                                 | 50              | -1             | 50              | -2             | 50 limit         |
+| Sulfuras, Hand of Ragnaros                | 80              | 1              | 80              | 1              | never changes    |
+| Backstage passes to a TAFKAL80ETC concert | 1               | 11             | 2               | 10             | increase by 1    |
+| Backstage passes to a TAFKAL80ETC concert | 1               | 10             | 3               | 9              | increase by 2    |
+| Backstage passes to a TAFKAL80ETC concert | 1               | 6              | 3               | 5              | increase by 2    |
+| Backstage passes to a TAFKAL80ETC concert | 1               | 5              | 4               | 4              | increase by 3    |
+| Backstage passes to a TAFKAL80ETC concert | 1               | 0              | 0               | -1             | after concert    |
+| Backstage passes to a TAFKAL80ETC concert | 50              | 11             | 50              | 10             | 50 limit         |
+
+
+Scenario: Quality changes each day for items (Type Scenario)
+* Quality change type for specific items   
+| name                                      | type      |
+| Non-specific-item                         | NORMAL    |
+| Aged Brie                                 | BRIE      | 
+| Sulfuras, Hand of Ragnaros                | LEGACY    | 
+| Backstage passes to a TAFKAL80ETC concert | PASS      | 
+
+Scenario: SellIn changes each day except for Sulfuras 
+# Current sellIn cs and revised sellIn rs 
+* SellIn changes after a day passes 
+| type                        | cs   | rs  | notes                       | 
+| NORMAL                      | 1    | 0   | SellIn down by 1            | 
+| NORMAL                      | -1   | -2  | Regardless of value         |
+| NORMAL                      | 100  | 99  | Is there a maximum SellIn?  | 
+| LEGACY                      | 1    | 1   | SellIn never changes        | 
+
+Scenario: Quality changes each day for items (Change Scenario) 
+* Quality changes after a day passes based on item type  
+| type      | cq | cs | rq | notes            |
+| NORMAL    | 1  | 1  | 0  | quality decrease |
+| NORMAL    | 0  | 1  | 0  | never below 0    |
+| NORMAL    | 4  | 0  | 2  | twice as fast    |
+| BRIE      | 4  | 1  | 5  | increases        |
+| BRIE      | 4  | 0  | 6  | increases twice  |
+| BRIE      | 4  | -1 | 6  | increases twice  |
+| BRIE      | 49 | -1 | 50 | 50 limit         |
+| BRIE      | 50 | -1 | 50 | 50 limit         |
+| LEGACY    | 80 | 1  | 80 | never changes    |
+| PASS      | 1  | 11 | 2  | increase by 1    |
+| PASS      | 1  | 10 | 3  | increase by 2    |
+| PASS      | 1  | 6  | 3  | increase by 2    |
+| PASS      | 1  | 5  | 4  | increase by 3    |
+| PASS      | 1  | 0  | 0  | after concert    |
+| PASS      | 50 | 11 | 50 | 50 limit         |
+

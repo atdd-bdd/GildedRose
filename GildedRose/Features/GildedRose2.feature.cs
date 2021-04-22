@@ -604,7 +604,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "50",
                             "50 limit"});
                 table4.AddRow(new string[] {
-                            "UNCHANGED",
+                            "LEGACY",
                             "80",
                             "1",
                             "80",
