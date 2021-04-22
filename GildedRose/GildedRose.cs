@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GildedRoseKata
+namespace GildedRoseApp
 
 {
 
@@ -23,10 +23,10 @@ namespace GildedRoseKata
                 UpdateQualityForItem(item);
             }
         }
-        enum Type { NORMAL, BRIE, PASS, LEGACY};
-        static Type getType(Item item)
+        public enum Type { NORMAL, BRIE, PASS, LEGACY};
+        public static Type getType(String itemName)
         {
-            switch (item.Name)
+            switch (itemName)
             {
                 case "Sulfuras, Hand of Ragnaros":
                     return Type.LEGACY;
@@ -38,14 +38,27 @@ namespace GildedRoseKata
                     return Type.NORMAL; 
             }
         }
-        private static void UpdateQualityForItem(Item item)
+        public static void UpdateQualityForItem(Item item)
         {
-            Type type = getType(item); 
-           if (type == Type.LEGACY)
+            if (item == null)
+            {
+                throw new ArgumentNullException(nameof(item));
+            }
+            Type type = getType(item.Name);
+            UpdateQualityForType(item, type);
+        }
+
+        public static void UpdateQualityForType(Item item, Type type)
+        {
+            if (item == null)
+            {
+                throw new ArgumentNullException(nameof(item));
+            }
+            if (type == Type.LEGACY)
                 return;
             if (type != Type.BRIE &&
                 type != Type.PASS)
-                      item.Quality = item.Quality - 1;
+                item.Quality = item.Quality - 1;
             else
             {
                 item.Quality = item.Quality + 1;
@@ -54,26 +67,26 @@ namespace GildedRoseKata
                 {
                     if (item.SellIn < 11)
                         item.Quality = item.Quality + 1;
-  
+
                     if (item.SellIn < 6)
                         item.Quality = item.Quality + 1;
-                 }
+                }
 
             }
 
-           item.SellIn = item.SellIn - 1;
-           if (item.SellIn < 0)
+            item.SellIn = item.SellIn - 1;
+            if (item.SellIn < 0)
             {
                 if (type != Type.BRIE)
                 {
                     if (type != Type.PASS)
-                             item.Quality = item.Quality - 1;
+                        item.Quality = item.Quality - 1;
                     else
-                         item.Quality = 0;
-                 }
+                        item.Quality = 0;
+                }
                 else
                     item.Quality = item.Quality + 1;
-             }
+            }
             if (item.Quality < 0)
                 item.Quality = 0;
             if (item.Quality > 50)

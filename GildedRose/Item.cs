@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GildedRoseKata
+namespace GildedRoseApp
 {
 
         public class Item

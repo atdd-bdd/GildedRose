@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace GildedRose.Features
+namespace GildedRoseKata.Features
 {
     using TechTalk.SpecFlow;
     using System;
@@ -270,6 +270,386 @@ this.QualityChangesEachDay("Backstage passes to a TAFKAL80ETC concert", "1", "0"
 #line 23
 this.QualityChangesEachDay("Backstage passes to a TAFKAL80ETC concert", "50", "11", "50", "10", "50 limit", ((string[])(null)));
 #line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Quality changes each day alternative", SourceLine=44)]
+        public virtual void QualityChangesEachDayAlternative()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Quality changes each day alternative", null, tagsOfScenario, argumentsOfScenario);
+#line 45
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                            "name",
+                            "cq",
+                            "cs",
+                            "rq",
+                            "rs",
+                            "notes"});
+                table1.AddRow(new string[] {
+                            "Non-specific-item",
+                            "1",
+                            "1",
+                            "0",
+                            "0",
+                            "quality decrease"});
+                table1.AddRow(new string[] {
+                            "Non-specific-item",
+                            "0",
+                            "1",
+                            "0",
+                            "0",
+                            "never below 0"});
+                table1.AddRow(new string[] {
+                            "Non-specific-item",
+                            "4",
+                            "0",
+                            "2",
+                            "-1",
+                            "twice as fast"});
+                table1.AddRow(new string[] {
+                            "Aged Brie",
+                            "4",
+                            "1",
+                            "5",
+                            "0",
+                            "increases"});
+                table1.AddRow(new string[] {
+                            "Aged Brie",
+                            "4",
+                            "0",
+                            "6",
+                            "-1",
+                            "increases twice"});
+                table1.AddRow(new string[] {
+                            "Aged Brie",
+                            "4",
+                            "-1",
+                            "6",
+                            "-2",
+                            "increases twice"});
+                table1.AddRow(new string[] {
+                            "Aged Brie",
+                            "49",
+                            "-1",
+                            "50",
+                            "-2",
+                            "50 limit"});
+                table1.AddRow(new string[] {
+                            "Aged Brie",
+                            "50",
+                            "-1",
+                            "50",
+                            "-2",
+                            "50 limit"});
+                table1.AddRow(new string[] {
+                            "Sulfuras, Hand of Ragnaros",
+                            "80",
+                            "1",
+                            "80",
+                            "1",
+                            "never changes"});
+                table1.AddRow(new string[] {
+                            "Backstage passes to a TAFKAL80ETC concert",
+                            "1",
+                            "11",
+                            "2",
+                            "10",
+                            "increase by 1"});
+                table1.AddRow(new string[] {
+                            "Backstage passes to a TAFKAL80ETC concert",
+                            "1",
+                            "10",
+                            "3",
+                            "9",
+                            "increase by 2"});
+                table1.AddRow(new string[] {
+                            "Backstage passes to a TAFKAL80ETC concert",
+                            "1",
+                            "6",
+                            "3",
+                            "5",
+                            "increase by 2"});
+                table1.AddRow(new string[] {
+                            "Backstage passes to a TAFKAL80ETC concert",
+                            "1",
+                            "5",
+                            "4",
+                            "4",
+                            "increase by 3"});
+                table1.AddRow(new string[] {
+                            "Backstage passes to a TAFKAL80ETC concert",
+                            "1",
+                            "0",
+                            "0",
+                            "-1",
+                            "after concert"});
+                table1.AddRow(new string[] {
+                            "Backstage passes to a TAFKAL80ETC concert",
+                            "50",
+                            "11",
+                            "50",
+                            "10",
+                            "50 limit"});
+#line 48
+testRunner.And("Quality changes after a day passes for specific items", ((string)(null)), table1, "* ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Quality changes each day for items (Type Scenario)", SourceLine=66)]
+        public virtual void QualityChangesEachDayForItemsTypeScenario()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Quality changes each day for items (Type Scenario)", null, tagsOfScenario, argumentsOfScenario);
+#line 67
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                            "name",
+                            "type"});
+                table2.AddRow(new string[] {
+                            "Non-specific-item",
+                            "NORMAL"});
+                table2.AddRow(new string[] {
+                            "Aged Brie",
+                            "BRIE"});
+                table2.AddRow(new string[] {
+                            "Sulfuras, Hand of Ragnaros",
+                            "LEGACY"});
+                table2.AddRow(new string[] {
+                            "Backstage passes to a TAFKAL80ETC concert",
+                            "PASS"});
+#line 68
+testRunner.And("Quality change type for specific items", ((string)(null)), table2, "* ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("SellIn changes each day except for Sulfuras", SourceLine=74)]
+        public virtual void SellInChangesEachDayExceptForSulfuras()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("SellIn changes each day except for Sulfuras", null, tagsOfScenario, argumentsOfScenario);
+#line 75
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                            "type",
+                            "cs",
+                            "rs",
+                            "notes"});
+                table3.AddRow(new string[] {
+                            "NORMAL",
+                            "1",
+                            "0",
+                            "SellIn down by 1"});
+                table3.AddRow(new string[] {
+                            "NORMAL",
+                            "-1",
+                            "-2",
+                            "Regardless of value"});
+                table3.AddRow(new string[] {
+                            "NORMAL",
+                            "100",
+                            "99",
+                            "Is there a maximum SellIn?"});
+                table3.AddRow(new string[] {
+                            "LEGACY",
+                            "1",
+                            "1",
+                            "SellIn never changes"});
+#line 77
+testRunner.And("SellIn changes after a day passes", ((string)(null)), table3, "* ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Quality changes each day for items (Change Scenario)", SourceLine=83)]
+        public virtual void QualityChangesEachDayForItemsChangeScenario()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Quality changes each day for items (Change Scenario)", null, tagsOfScenario, argumentsOfScenario);
+#line 84
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                            "type",
+                            "cq",
+                            "cs",
+                            "rq",
+                            "notes"});
+                table4.AddRow(new string[] {
+                            "NORMAL",
+                            "1",
+                            "1",
+                            "0",
+                            "quality decrease"});
+                table4.AddRow(new string[] {
+                            "NORMAL",
+                            "0",
+                            "1",
+                            "0",
+                            "never below 0"});
+                table4.AddRow(new string[] {
+                            "NORMAL",
+                            "4",
+                            "0",
+                            "2",
+                            "twice as fast"});
+                table4.AddRow(new string[] {
+                            "BRIE",
+                            "4",
+                            "1",
+                            "5",
+                            "increases"});
+                table4.AddRow(new string[] {
+                            "BRIE",
+                            "4",
+                            "0",
+                            "6",
+                            "increases twice"});
+                table4.AddRow(new string[] {
+                            "BRIE",
+                            "4",
+                            "-1",
+                            "6",
+                            "increases twice"});
+                table4.AddRow(new string[] {
+                            "BRIE",
+                            "49",
+                            "-1",
+                            "50",
+                            "50 limit"});
+                table4.AddRow(new string[] {
+                            "BRIE",
+                            "50",
+                            "-1",
+                            "50",
+                            "50 limit"});
+                table4.AddRow(new string[] {
+                            "UNCHANGED",
+                            "80",
+                            "1",
+                            "80",
+                            "never changes"});
+                table4.AddRow(new string[] {
+                            "PASS",
+                            "1",
+                            "11",
+                            "2",
+                            "increase by 1"});
+                table4.AddRow(new string[] {
+                            "PASS",
+                            "1",
+                            "10",
+                            "3",
+                            "increase by 2"});
+                table4.AddRow(new string[] {
+                            "PASS",
+                            "1",
+                            "6",
+                            "3",
+                            "increase by 2"});
+                table4.AddRow(new string[] {
+                            "PASS",
+                            "1",
+                            "5",
+                            "4",
+                            "increase by 3"});
+                table4.AddRow(new string[] {
+                            "PASS",
+                            "1",
+                            "0",
+                            "0",
+                            "after concert"});
+                table4.AddRow(new string[] {
+                            "PASS",
+                            "50",
+                            "11",
+                            "50",
+                            "50 limit"});
+#line 85
+testRunner.And("Quality changes after a day passes based on item type", ((string)(null)), table4, "* ");
+#line hidden
+            }
+            this.ScenarioCleanup();
         }
     }
 }

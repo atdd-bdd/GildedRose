@@ -2,8 +2,8 @@
 using System;
 using System.Collections.Generic;
 using TechTalk.SpecFlow;
-using GildedRoseKata; 
-namespace GildedRose.Features
+using GildedRoseApp; 
+namespace GildedRoseApp.Features
 {
     [Binding]
     public class GildedRoseSteps
@@ -29,7 +29,7 @@ namespace GildedRose.Features
         public void WhenADayPasses()
         {
             Items.Add(new Item { Name = name, SellIn = currentSellin, Quality = currentQuality });
-            GildedRoseKata.GildedRose app = new GildedRoseKata.GildedRose(Items);
+            global::GildedRoseApp.GildedRose app = new global::GildedRoseApp.GildedRose(Items);
             app.UpdateQuality();
         }
    
